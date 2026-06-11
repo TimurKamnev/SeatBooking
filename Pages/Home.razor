@@ -2,13 +2,13 @@
 @using SeatBooking.Models
 @inject SeatService SeatService
 
-<PageTitle>Home</PageTitle>
+<PageTitle>Главная</PageTitle>
 
-<h1>Movies</h1>
+<h1>Фильмы</h1>
 
-<p>Welcome to the SeatBooking application! This application allows you to browse and book seats for your favorite
-    movies. Explore our collection of movies, select your preferred showtime, and reserve your seats with ease. Enjoy a
-    seamless movie booking experience!</p>
+<p>Добро пожаловать в приложение SeatBooking! Это приложение позволяет просматривать и бронировать места на ваши любимые
+    фильмы. Изучите нашу коллекцию фильмов, выберите желаемое время сеанса и с легкостью зарезервируйте места.
+    Наслаждайтесь удобным процессом бронирования билетов в кино!</p>
 
     <div class="container mb-4">
         <div class="movies-box pt-3">
@@ -16,13 +16,13 @@
             {
                 <article class="card movie-card">
                     <img class="card-img-top" src="@movie.ImageUrl" alt="@movie.Name"
-                         style="min-height: 425px;">
+                         style="min-height: 425px; height: 100%">
                     <div class="card-body d-flex flex-column">
                         <div class="mb-3">
                             <h5 class="card-title">@movie.Name</h5>
-                            <p class="card-text">@movie.Description</p>
+                            <p class="card-text text-truncate">@movie.Description</p>
                         </div>
-                        <button class="btn btn-primary mt-auto">Book Seat</button>
+                        <a href="/movie/@movie.Id" class="btn btn-primary mt-auto">Выбрать</a>
                     </div>
                 </article>
             }
