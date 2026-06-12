@@ -170,6 +170,15 @@ code {
 .seat.selected { background: #21f375; }
 .seat.occupied { background: #161616; cursor: not-allowed; }
 
+.genre-tag {
+    background: transparent;
+    color: #258cfb;
+    padding: 4px 12px;
+	border: 1px solid #258cfb;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
 @media (hover: hover) {
 	.seat:not(.seat.occupied, .seat.selected):hover {
 		background: #3665ff5c;

@@ -65,6 +65,7 @@ public class SeatService()
                 Name = "Человек из стали",
                 Description = "Надежда, в основе этой надежды лежит вера в потенциал каждого человека в том что его задача творить добро.",
                 ImageUrl = "/Images/Man_Of_Steel.webp",
+                Genre = ["Фантастика", "Приключение"],
                 Seats = GenerateSeats(5, 5)
             },
             new Movie
@@ -73,6 +74,7 @@ public class SeatService()
                 Name = "Лего фильм",
                 Description = "Детский мультфильм о приключении и жизни особенного героя.",
                 ImageUrl = "/Images/Lego_Movie.webp",
+                Genre = ["Мультфильм", "Комедия"],
                 Seats = GenerateSeats(8, 10)
             },
             new Movie
@@ -81,6 +83,7 @@ public class SeatService()
                 Name = "Без компромиссов",
                 Description = "Брутальный фильм и завораживающие события которые покажут мир наизнанку.",
                 ImageUrl = "/Images/Blitz.webp",
+                Genre = ["Боевик", "Триллер"],
                 Seats = GenerateSeats(8, 10)
             },
             new Movie
@@ -89,6 +92,7 @@ public class SeatService()
                 Name = "Интерстеллар",
                 Description = "Космическое приключение и спасение миллионов жизней",
                 ImageUrl = "/Images/Interstellar.webp",
+                Genre = ["Фантастика", "Драма"],
                 Seats = GenerateSeats(2, 4)
             },
             new Movie
@@ -97,6 +101,7 @@ public class SeatService()
                 Name = "Властелин колец",
                 Description = "Невероятное приключение хоббитов и приключение.",
                 ImageUrl = "/Images/Lord_of_the_rings.webp",
+                Genre = ["Фэнтези", "Приключение"],
                 Seats = GenerateSeats(10, 12)
             }
         ];

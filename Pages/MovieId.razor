@@ -13,51 +13,79 @@ else
     <div class="container my-4">
         <a href="/" class="btn btn-primary mb-4">Назад к списку фильмов</a>
 
-        <h1>@movie.Name</h1>
+    
+        <div class="d-flex flex-column flex-xl-row justify-content-between gap-3 gap-lg-5 ">
+            <img src="@movie.ImageUrl" alt="@movie.Name" class="mb-3 h-auto flex-grow-1"
+                 style="width: 100%; max-width: 26rem; border-radius: 8px;" />
+            <div class="d-flex flex-column flex-grow-1">
+                <div class="mb-2">
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h1>@movie.Name</h1>
+                            <div class="d-flex gap-3 flex-wrap">
+                                @foreach (var genre in movie.Genre)
+                                {
+                                    <span class="mb-3 genre-tag">@genre</span>
+                                }
+                            </div>
+                        </div>
+                        <div class="legend d-none d-lg-flex gap-3 mb-3 justify-content-end">
+                            <span><span class="d-block seat free" style="max-width: 16px; height: 16px;"></span>
+                                Свободно</span>
+                                <span><span class="d-block seat selected" style="max-width: 16px; height: 16px;"></span>
+                                    Выбран</span>
+                                    <span><span class="d-block seat occupied" style="max-width: 16px; height: 16px;"></span> Занято
+                                    </span>
+                                </div>
+                            </div>
+                            <p><strong>
+                                О фильме:
+                            </strong> @movie.Description</p>
 
-        <p class="mb-5">@movie.Description</p>
+                            <div class="legend d-flex d-lg-none gap-3 mb-3 justify-content-end">
+                                <span><span class="d-block seat free" style="max-width: 16px; height: 16px;"></span> Свободно</span>
+                                <span><span class="d-block seat selected" style="max-width: 16px; height: 16px;"></span>
+                                    Выбран</span>
+                                    <span><span class="d-block seat occupied" style="max-width: 16px; height: 16px;"></span> Занято
+                                    </span>
+                                </div>
+                            </div>
 
-        <div class="d-flex justify-content-center">
-            <div class="seat-grid m-auto">
-                @foreach (var row in movie.Seats)
-                {
-                    <div class="seat-row">
-                        @foreach (var seat in row)
-                        {
-                            <button class="seat @GetSeatClass(seat.Status)" disabled="@(seat.Status == PlaceStatus.Occupied)"
-                                    @onclick="() => SeatService.ToggleSeat(movie.Id, seat.Id)">
-                            </button>
-                        }
+                            <div class="d-flex justify-content-center">
+                                <div class="seat-grid m-auto">
+                                    @foreach (var row in movie.Seats)
+                                    {
+                                        <div class="seat-row">
+                                            @foreach (var seat in row)
+                                            {
+                                                <button class="seat @GetSeatClass(seat.Status)"
+                                                        disabled="@(seat.Status == PlaceStatus.Occupied)"
+                                                        @onclick="() => SeatService.ToggleSeat(movie.Id, seat.Id)">
+                                                </button>
+                                            }
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                            <div class="screen mt-4">ЭКРАН</div>
+                            <div class="d-flex gap-2 pt-2 pt-md-0 gap-lg-4 mt-auto flex-wrap">
+                                <p class="mb-0 mb-md-3">Выбранные места: @GetSelectedCount()</p>
+                                <strong>Максимальное кол-во выбранных мест - 8</strong>
+                            </div>
+                        </div>
                     </div>
-                }
-            </div>
-        </div>
 
-
-        <div class="screen mt-4 mb-5">ЭКРАН</div>
-
-
-        <div class="legend mt-3 d-flex gap-3">
-            <span><span class="d-block seat free"></span> Свободное</span>
-            <span><span class="d-block seat selected"></span> Выбранное</span>
-            <span><span class="d-block seat occupied"></span> Занято </span>
-        </div>
-
-        <div class="mt-3">
-            <div class="d-flex gap-4">
-                <p>Выбранные места: @GetSelectedCount()</p>
-                <strong class="form-label">Максимальное кол-во выбранных мест - 8</strong>
-            </div>
-            <button class="btn btn-danger" @onclick="() => SeatService.ResetSeats(movie.Id)">
-                Сбросить
-            </button>
-            <button class="btn btn-primary" @onclick="() => SeatService.BookSeats(movie.Id)"
-                    disabled="@(GetSelectedCount() == 0)">
-                Забронировать
-            </button>
-        </div>
-    </div>
-}
+                    <div class="mt-3 d-flex justify-content-end gap-3">
+                        <button class="btn btn-danger" @onclick="() => SeatService.ResetSeats(movie.Id)">
+                            Сбросить
+                        </button>
+                        <button class="btn btn-primary" @onclick="() => SeatService.BookSeats(movie.Id)"
+                                disabled="@(GetSelectedCount() == 0)">
+                            Забронировать
+                        </button>
+                    </div>
+                </div>
+            }
 
 @code {
     [Parameter]
