@@ -5,7 +5,7 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
   "mainAssemblyName": "SeatBooking",
   "applicationEnvironment": "Development",
   "resources": {
-    "hash": "sha256-z7vWpnIfNFSBYsPCmoqMjXb0giVWupLfyV5Lwb3g5ts=",
+    "hash": "sha256-MPf4aI5DSkJWzjc7GsdvqLxWAgG2C1bIzp24nvbJl2s=",
     "jsModuleNative": [
       {
         "name": "dotnet.native.ikrs475e5v.js"
@@ -1242,16 +1242,16 @@ var e=!1;const t=async()=>WebAssembly.validate(new Uint8Array([0,97,115,109,1,0,
       },
       {
         "virtualPath": "SeatBooking.wasm",
-        "name": "SeatBooking.4g9kcjogk9.wasm",
-        "hash": "sha256-LFveX7nH+JrTdfXyBwO/lVxguavOZx2f/vLYLGf8/8s=",
+        "name": "SeatBooking.lxhq6x2px2.wasm",
+        "hash": "sha256-t9gYb44u7yD9Ii82qsVaS5Ry8He8dcED8trXs8mIzdA=",
         "cache": "force-cache"
       }
     ],
     "pdb": [
       {
         "virtualPath": "SeatBooking.pdb",
-        "name": "SeatBooking.6jl41s9zz8.pdb",
-        "hash": "sha256-/tjbbP5VvurQkX9z8COIsWzU0qW7/olcobkOo4Mshxo=",
+        "name": "SeatBooking.758zhlrwun.pdb",
+        "hash": "sha256-BRc7Fh1bpBu3mqmYhsC7pvDl7J/8vSKhDrd7Xo2BjKk=",
         "cache": "force-cache"
       }
     ],

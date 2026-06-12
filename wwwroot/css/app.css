@@ -159,7 +159,7 @@ code {
 }
 
 .seat {
-    width: 36px;
+	width: 36px;
     height: 36px;
     border-radius: 6px;
     border: 1px solid #c1c1c1;
@@ -173,5 +173,19 @@ code {
 @media (hover: hover) {
 	.seat:not(.seat.occupied, .seat.selected):hover {
 		background: #3665ff5c;
+	}
+}
+
+@media (max-width: 640px) {
+	.seat {
+		width: 24px;
+		height: 24px;
+	}
+}
+
+@media (max-width: 425px) {
+	.seat {
+		width: 16px;
+		height: 16px;
 	}
 }

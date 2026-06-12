@@ -11,14 +11,13 @@ else
     <PageTitle>Movie - @movie.Name</PageTitle>
 
     <div class="container my-4">
+        <a href="/" class="btn btn-primary mb-4">Назад к списку фильмов</a>
+
         <h1>@movie.Name</h1>
 
-        <div class="d-flex justify-content-between">
-            <p class="w-50">@movie.Description</p>
-            <strong class="form-label">Максимальное количество выбранных мест: 8</strong>
-        </div>
+        <p class="mb-5">@movie.Description</p>
 
-        <div class="d-hidden d-sm-flex justify-content-center">
+        <div class="d-flex justify-content-center">
             <div class="seat-grid m-auto">
                 @foreach (var row in movie.Seats)
                 {
@@ -35,7 +34,7 @@ else
         </div>
 
 
-        <div class="screen mt-4 mb-3">ЭКРАН</div>
+        <div class="screen mt-4 mb-5">ЭКРАН</div>
 
 
         <div class="legend mt-3 d-flex gap-3">
@@ -45,7 +44,10 @@ else
         </div>
 
         <div class="mt-3">
-            <p>Выбранные места: @GetSelectedCount()</p>
+            <div class="d-flex gap-4">
+                <p>Выбранные места: @GetSelectedCount()</p>
+                <strong class="form-label">Максимальное кол-во выбранных мест - 8</strong>
+            </div>
             <button class="btn btn-danger" @onclick="() => SeatService.ResetSeats(movie.Id)">
                 Сбросить
             </button>
